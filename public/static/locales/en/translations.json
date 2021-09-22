@@ -15,7 +15,8 @@
 
   "LandingPage": {
     "Title": "Welcome",
-    "Subtitle": "Please enter your e-mail:"
+    "Subtitle": "Please enter your e-mail:",
+    "EmailError": "Please enter valid e-mail"
   },
 
   "NavBar": {
