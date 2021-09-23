@@ -15,8 +15,10 @@
   "NavBar": {
     "MyFirstMenu": "My First Menu",
     "Dashboard": "Dashboard",
-    "Settings": "Settings"
+    "Settings": "Settings",
+    "Conferences": "Conferences"
   },
+
   "Tooltips": {
     "Logout": "Logout",
     "HidePassword": "Hide password",
