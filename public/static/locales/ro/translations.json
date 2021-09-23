@@ -4,8 +4,18 @@
   "RowsPerPage": "Randuri pe pagina",
   "MyProfile": "Profilul meu",
   "Forbidden": "Nu aveti dreptul sa vedeti aceasta pagina!",
+
+  "LandingPage": {
+    "Title": "Salutare!",
+    "Subtitle": "Te rog introdu email-ul:",
+    "EmailError": "Va rog sa introduceti un email corect!"
+  },
+  "UserMenu": {
+    "User": "Utilizator necunoscut"
+  },
+
   "NavBar": {
-    "Dashboard": "Panou central",
+    "Welcome": "Bun venit",
     "MyFirstMenu": "Primul meu Meniu",
 
     "Settings": "Setari",

@@ -6,21 +6,32 @@ import CustomRoute from '../components/routing/CustomRoute'
 
 import HelloWorld from 'features/helloWorld/HelloWorld'
 
-import Dashboard from 'features/dashboard/Dashboard'
+import Welcome from 'features/welcome/Welcome'
 import Settings from 'features/settings/Settings'
 import { Forbidden, NotFound } from '@bit/totalsoft_oss.react-mui.kit.core'
+import { useEmail } from 'hooks/useEmail'
 
 export default function AppRoutes() {
+  const [email] = useEmail()
+  if (email) {
+    return (
+      <Switch>
+        <CustomRoute isPrivate={false} exact path='/welcome' component={Welcome} />
+        <CustomRoute exact path='/settings' component={Settings} />
+        <CustomRoute isPrivate={false} exact path='/helloWorld' component={HelloWorld} />
+        <Redirect exact from='/' to='/welcome' />
+        <CustomRoute isPrivate={false} exact path='/forbidden' component={Forbidden} />
+        <CustomRoute isPrivate={false} render={() => <NotFound title='PageNotFound'></NotFound>} />
+      </Switch>
+    )
+  }
   return (
     <Switch>
-      <CustomRoute isPrivate={false} exact path='/dashboard' component={Dashboard} />
-      <CustomRoute exact path='/settings' component={Settings} />
-      <CustomRoute isPrivate={false} exact path='/helloWorld' component={HelloWorld} />
-      <Redirect exact from='/' to='/dashboard' />
-      <CustomRoute isPrivate={false} exact path='/forbidden' component={Forbidden} />
-      <CustomRoute isPrivate={false} render={() => <NotFound title='PageNotFound'></NotFound>} />
+      <CustomRoute isPrivate={false} exact path='/welcome' component={Welcome} />
+
+      <Redirect exact to='/welcome' />
     </Switch>
   )
 }
-//
+
 //<Route exact path="/helloWorld" component={HelloWorld} />
