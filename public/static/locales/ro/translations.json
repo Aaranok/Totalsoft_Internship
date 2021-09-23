@@ -10,6 +10,9 @@
     "Subtitle": "Te rog introdu email-ul:",
     "EmailError": "Va rog sa introduceti un email corect!"
   },
+  "UserMenu": {
+    "User": "Utilizator necunoscut"
+  },
 
   "NavBar": {
     "Welcome": "Bun venit",

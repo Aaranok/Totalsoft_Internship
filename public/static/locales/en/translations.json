@@ -18,7 +18,9 @@
     "Subtitle": "Please enter your e-mail:",
     "EmailError": "Please enter valid e-mail"
   },
-
+  "UserMenu": {
+    "User": "Guest"
+  },
   "NavBar": {
     "MyFirstMenu": "My First Menu",
     "Welcome": "Welcome",
