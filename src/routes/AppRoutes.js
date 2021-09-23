@@ -5,6 +5,8 @@ import { Switch, Redirect } from 'react-router-dom'
 import CustomRoute from '../components/routing/CustomRoute'
 
 import HelloWorld from 'features/helloWorld/HelloWorld'
+import ConferenceListContainer from 'features/conferences/ConferenceListContainer';
+
 
 import Welcome from 'features/welcome/Welcome'
 import Settings from 'features/settings/Settings'
@@ -17,7 +19,8 @@ export default function AppRoutes() {
     return (
       <Switch>
         <CustomRoute isPrivate={false} exact path='/welcome' component={Welcome} />
-        <CustomRoute exact path='/settings' component={Settings} />
+        <CustomRoute isPrivate = {false} exact path='/settings' component={Settings} />
+        <CustomRoute isPrivate={false} exact path = '/conferences' component = {ConferenceListContainer}/>
         <CustomRoute isPrivate={false} exact path='/helloWorld' component={HelloWorld} />
         <Redirect exact from='/' to='/welcome' />
         <CustomRoute isPrivate={false} exact path='/forbidden' component={Forbidden} />

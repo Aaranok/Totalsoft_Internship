@@ -13,13 +13,30 @@
   "UserMenu": {
     "User": "Utilizator necunoscut"
   },
-
+  "General": {
+    "Buttons": {
+      "ApplyFilters": "Aplica filtre",
+      "ResetFilters": "Reseteaza filtre"
+    }
+  },
+  "Conferences": {
+    "Filters": {
+      "StartDate": "Data Start",
+      "EndDate": "Data Sfarsit"},
+    "Location" : "Locatie",
+    "Speaker" : "Orator",
+    "Attend": "Participa",
+    "Join": "Alatura-te",
+    "Withdraw": "Retrage-te",
+    "StatusNotSet": "Absent"
+    
+  },
   "NavBar": {
     "Welcome": "Bun venit",
     "MyFirstMenu": "Primul meu Meniu",
-
     "Settings": "Setari",
-    "User": "Profil"
+    "User": "Profil",
+    "Conferences" : "Conferinte"
   },
   "Tooltips": {
     "Logout": "Iesire",

@@ -21,10 +21,30 @@
   "UserMenu": {
     "User": "Guest"
   },
+  "General": {
+    "Buttons": {
+      "ApplyFilters": "Apply filters",
+      "ResetFilters": "Reset filters"
+    }
+  },
+  "Conferences": {
+    "Filters": {
+      "StartDate": "Start date",
+      "EndDate": "End date"
+    },
+    "Location" : "Location",
+    "Speaker" : "Speaker",
+    "Attend": "Attend",
+    "Join": "Join",
+    "Withdraw": "Withdraw",
+    "StatusNotSet": "Not attending"
+    
+  },
   "NavBar": {
     "MyFirstMenu": "My First Menu",
     "Welcome": "Welcome",
-    "Settings": "Settings"
+    "Settings": "Settings",
+    "Conferences" : "Conferences"
   },
   "Tooltips": {
     "Logout": "Logout",
