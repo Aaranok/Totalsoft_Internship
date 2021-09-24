@@ -8,6 +8,7 @@ const menuItems = [
   { icon: <HomeIcon />, text: 'NavBar.Welcome', path: '/welcome', name: 'Welcome' },
   { icon: <HomeIcon />, text: 'NavBar.MyFirstMenu', path: '/helloWorld', name: 'MyFirstMenu' },
   { icon: <EventIcon />, text: 'NavBar.Conferences', path: '/conferences', name: 'Conferences' },
+  { icon: <EventIcon />, text: 'NavBar.MyConferences', path: '/MyConferences', name:'MyConferences'},
   { icon: <Settings />, text: 'NavBar.Settings', path: '/settings', name: 'Settings' }
 
 ]

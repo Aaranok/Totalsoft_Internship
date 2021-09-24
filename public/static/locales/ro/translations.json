@@ -16,8 +16,23 @@
   "General": {
     "Buttons": {
       "ApplyFilters": "Aplica filtre",
-      "ResetFilters": "Reseteaza filtre"
+      "ResetFilters": "Reseteaza filtre",
+      "Save" : "Salveaza"
     }
+  },
+  "MyConferences": {
+    "Filters": {
+      "StartDate": "Start date",
+      "EndDate": "End date"
+    },
+    "Location" : "Location",
+    "Speaker" : "Speaker",
+    "Attend": "Attend",
+    "Join": "Join",
+    "Withdraw": "Withdraw",
+    "StatusNotSet": "Not attending",
+    "Edit" : "Editeaza",
+    "Delete" : "Sterge"
   },
   "Conferences": {
     "Filters": {
@@ -36,7 +51,8 @@
     "MyFirstMenu": "Primul meu Meniu",
     "Settings": "Setari",
     "User": "Profil",
-    "Conferences" : "Conferinte"
+    "Conferences" : "Conferinte",
+    "MyConferences" : "Conferintele mele"
   },
   "Tooltips": {
     "Logout": "Iesire",

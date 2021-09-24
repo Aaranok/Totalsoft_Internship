@@ -24,8 +24,23 @@
   "General": {
     "Buttons": {
       "ApplyFilters": "Apply filters",
-      "ResetFilters": "Reset filters"
+      "ResetFilters": "Reset filters",
+      "Save" : "Save"
     }
+  },
+  "MyConferences": {
+    "Filters": {
+      "StartDate": "Start date",
+      "EndDate": "End date"
+    },
+    "Location" : "Location",
+    "Speaker" : "Speaker",
+    "Attend": "Attend",
+    "Join": "Join",
+    "Withdraw": "Withdraw",
+    "StatusNotSet": "Not attending",
+    "Edit" : "Edit",
+    "Delete" : "Delete"
   },
   "Conferences": {
     "Filters": {
@@ -44,7 +59,8 @@
     "MyFirstMenu": "My First Menu",
     "Welcome": "Welcome",
     "Settings": "Settings",
-    "Conferences" : "Conferences"
+    "Conferences" : "Conferences",
+    "MyConferences" : "My Conferences"
   },
   "Tooltips": {
     "Logout": "Logout",
