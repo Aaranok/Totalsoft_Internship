@@ -2,9 +2,10 @@ import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next';
 import { useHeader } from 'providers/AreasProvider';
 import MyConferencesHeader from 'features/myConferences/MyConferencesHeader';
-import SaveButton from 'components/common/buttons/SaveButton';
+//import SaveButton from 'components/common/buttons/SaveButton';
+import SaveButton from '@bit/totalsoft_oss.react-mui.save-button';
 import MyConference from './MyConference';
-import { types, categories, countries, counties, cities } from 'utils/mocks/orgList';
+import { types, categories, countries, counties, cities } from 'src/utils/mocks/orgList';
 
 
 const MyConferenceContainer = () => {

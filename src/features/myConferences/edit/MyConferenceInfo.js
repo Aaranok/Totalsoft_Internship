@@ -69,3 +69,5 @@ MyConferenceInfo.propTypes = {
     types : PropTypes.array,
     categories : PropTypes.categories
 }
+
+export default MyConferenceInfo

@@ -42,6 +42,21 @@
     "Edit" : "Edit",
     "Delete" : "Delete"
   },
+  "Speaker": {
+    "Name": "Name",
+    "Nationality": "Nationality",
+    "Rating": "Rating",
+    "MainSpeaker": "Main Speaker"
+  },
+  "Location": {
+    "Name": "Name",
+    "Address": "Address",
+    "Country": "Country",
+    "County": "County",
+    "City": "City",
+    "Latitude": "Latitude",
+    "Longitude": "Longitude"
+  },
   "Conferences": {
     "Filters": {
       "StartDate": "Start date",

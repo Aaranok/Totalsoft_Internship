@@ -20,6 +20,21 @@
       "Save" : "Salveaza"
     }
   },
+  "Speaker": {
+    "Name": "Nume",
+    "Nationality": "Nationalitate",
+    "Rating": "Rating",
+    "MainSpeaker": "Orator principal"
+  },
+  "Location": {
+    "Name": "Nume",
+    "Address": "Adresa",
+    "Country": "Tara",
+    "County": "Judet",
+    "City": "Oras",
+    "Latitude": "Latitudine",
+    "Longitude": "Longitudine"
+  },
   "MyConferences": {
     "Filters": {
       "StartDate": "Start date",
