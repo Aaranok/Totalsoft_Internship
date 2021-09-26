@@ -3,15 +3,37 @@ import PropTypes from "prop-types";
 import MyConference from "./MyConference";
 import MyConferenceContainer from "./MyConferenceContainer";
 import { useTranslation } from "react-i18next";
-import { prop } from "ramda";
+//import { prop } from "ramda";
 import { Grid } from "@material-ui/core";
 import Autocomplete from "@bit/totalsoft_oss.react-mui.autocomplete";
 import DateTime from "@bit/totalsoft_oss.react-mui.date-time";
 import CustomTextField from "@bit/totalsoft_oss.react-mui.custom-text-field";
+import { onTextBoxChange } from 'utils/propertyChangeAdapters/index';
+
 
 const MyConferenceInfo = (props) => {
     const {t} = useTranslation()
-    const {types, categories} = props
+    const {types, categories, conference, dispatch} = props
+
+    const { name, startDate, endDate, type, category } = conference
+    const { location } = conference
+
+    const handleDispatch = actionType => value => dispatch({ type: actionType, payload: value })
+
+    value={name}
+    onChange={onTextBoxChange(handleDispatch("name"))}
+
+    value={startDate}
+    onChange={handleDispatch("startDate")}
+
+    value={endDate}
+    onChange={handleDispatch("endDate")}
+
+    value={type}
+    onChange={handleDispatch("type")}
+
+    value={category}
+    onChange={handleDispatch("category")}
 
     return (
         <Grid container spacing={3}>
@@ -67,7 +89,9 @@ const MyConferenceInfo = (props) => {
 
 MyConferenceInfo.propTypes = {
     types : PropTypes.array,
-    categories : PropTypes.categories
+    categories : PropTypes.categories,
+    conference: PropTypes.object.isRequired,
+    dispatch: PropTypes.func.isRequired
 }
 
 export default MyConferenceInfo
