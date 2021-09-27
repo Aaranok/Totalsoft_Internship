@@ -8,12 +8,23 @@ import MyConference from './MyConference';
 //import { types, categories, countries, counties, cities } from 'utils/mock/myConferences';
 import myConferences from "utils/mock/myConferences"
 import { reducer, initialConference} from "features/myConferences/edit/MyConferenceReducer"
+import { conference as serverConference } from 'utils/mock/myConference';
+import { useRouteMatch } from 'react-router';
+
 
 const MyConferenceContainer = () => {
 
     const { types, categories, countries, counties, cities } = myConferences
     const [conference, dispatch] = useReducer(reducer, initialConference)
     
+    const match = useRouteMatch();
+    const conferenceId = match.params.id;
+    const isNew = conferenceId === 'new';
+    useEffect(() => {
+        if (!isNew) {
+            dispatch({ type: 'resetData', payload: serverConference })
+        }
+    }, [])
 
     const { t } = useTranslation()
 

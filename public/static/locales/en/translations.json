@@ -26,7 +26,9 @@
       "ApplyFilters": "Apply filters",
       "ResetFilters": "Reset filters",
       "Save" : "Save",
-      "AddConference" : "Add Conference"
+      "AddConference" : "Add Conference",
+      "AddSpeaker" : "Add speaker",
+      "DeleteSpeaker" : "Delete speaker"
     }
   },
   "MyConferences": {
@@ -74,7 +76,12 @@
     "Info": "Conference info",
     "Location": "Location",
     "Speakers": "Speakers",
-    "Name" : "Name"
+    "Name" : "Name",
+    "StartDate" : "Start date",
+    "EndDate" :"End date",
+    "Type" : "Type",
+    "Category" : "Category"
+
   },
   
   "NavBar": {

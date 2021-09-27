@@ -54,8 +54,23 @@ export const reducer = (state, action) => {
                     ? [...state.deletedSpeakers, state.speakers[action.index].id]
                     : state.deletedSpeakers
             }
-            case 'addSpeaker':
-                return {...state, speakers:[...state.speakers, {}]}
+        case 'addSpeaker': {
+            const minSpeakerId = Math.min(...state.speakers.map(speaker => speaker.id), 0)
+            return { ...state, speakers: [...state.speakers, { id: minSpeakerId - 1, name: emptyString, nationality: emptyString, rating: emptyString }] }
+        }
+        case 'nationality':
+        case 'rating':
+        case 'isMainSpeaker':
+            return {
+                ...state,
+                speakers: [
+                    ...state.speakers.slice(0, action.index),
+                    { ...state.speakers[action.index], [action.type]: action.payload },
+                    ...state.speakers.slice(action.index + 1)
+                ]
+            }
+        case 'resetData':
+            return { deletedSpeakers: emptyArray, ...action.payload }
         default:
             return state
     }
