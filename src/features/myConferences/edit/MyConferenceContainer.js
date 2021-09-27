@@ -7,16 +7,13 @@ import SaveButton from '@bit/totalsoft_oss.react-mui.save-button';
 import MyConference from './MyConference';
 //import { types, categories, countries, counties, cities } from 'utils/mock/myConferences';
 import myConferences from "utils/mock/myConferences"
-import reducer from "features/myConferences/MyConferenceReducer"
+import { reducer, initialConference} from "features/myConferences/edit/MyConferenceReducer"
 
 const MyConferenceContainer = () => {
 
     const { types, categories, countries, counties, cities } = myConferences
     const [conference, dispatch] = useReducer(reducer, initialConference)
-    useEffect(() => {
-        setHeader(<MyConferencesHeader title={conference.name} actions={<SaveButton title={t("General.Buttons.Save")} />} />)
-    }, [conference.name, setHeader, t])
-
+    
 
     const { t } = useTranslation()
 
@@ -27,6 +24,9 @@ const MyConferenceContainer = () => {
         setHeader(<MyConferencesHeader actions={<SaveButton title={t("General.Buttons.Save")} />} />)
 
     }, [setHeader, t])
+    useEffect(() => {
+        setHeader(<MyConferencesHeader title={conference.name} actions={<SaveButton title={t("General.Buttons.Save")} />} />)
+    }, [conference.name, setHeader, t])
 
     const { data } = {
         data: {

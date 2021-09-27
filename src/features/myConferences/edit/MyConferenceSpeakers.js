@@ -10,10 +10,10 @@ import MyConferenceSpeakerData from './MyConferencesSpeakerData';
 const useStyles = makeStyles(tableStyles);
 
 const MyConferenceSpeakers = (props) => {
-    const { speakers } = props
+    const { speakers, dispatch } = props
     const { t } = useTranslation();
     const classes = useStyles();
-
+    
     return <Grid className={classes.enableScrollX}>
         <Table className={classes.table}>
             <Thead>
@@ -31,6 +31,7 @@ const MyConferenceSpeakers = (props) => {
                         key={speaker?.id}
                         speaker={speaker}
                         index={index}
+                        dispatch = {dispatch}
                     />
                 ))}
             </Tbody>
@@ -39,7 +40,8 @@ const MyConferenceSpeakers = (props) => {
 }
 
 MyConferenceSpeakers.propTypes = {
-    speakers: PropTypes.array
+    speakers: PropTypes.array,
+    dispatch: PropTypes.func
 }
 
 MyConferenceSpeakers.defaultProps = {

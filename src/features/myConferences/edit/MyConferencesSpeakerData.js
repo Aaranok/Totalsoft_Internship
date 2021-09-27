@@ -13,8 +13,11 @@ const useStyles = makeStyles(tableStyles);
 
 const MyConferenceSpeakerData = (props) => {
     const { speaker, dispatch, index } = props
+    const { name, nationality, rating, isMainSpeaker } = speaker
     const { t } = useTranslation();
     const classes = useStyles();
+    const handleDispatch = actionType => value => dispatch({ type: actionType, payload: value, index })
+
 
     return <Tr>
         <Td className={classes.tableContent}>

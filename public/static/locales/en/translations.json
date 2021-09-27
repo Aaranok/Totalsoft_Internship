@@ -25,7 +25,8 @@
     "Buttons": {
       "ApplyFilters": "Apply filters",
       "ResetFilters": "Reset filters",
-      "Save" : "Save"
+      "Save" : "Save",
+      "AddConference" : "Add Conference"
     }
   },
   "MyConferences": {
@@ -68,8 +69,14 @@
     "Join": "Join",
     "Withdraw": "Withdraw",
     "StatusNotSet": "Not attending"
-    
   },
+  "Conference": {
+    "Info": "Conference info",
+    "Location": "Location",
+    "Speakers": "Speakers",
+    "Name" : "Name"
+  },
+  
   "NavBar": {
     "MyFirstMenu": "My First Menu",
     "Welcome": "Welcome",

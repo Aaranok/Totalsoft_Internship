@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
 import { Info, LocationOn, Face } from '@material-ui/icons'
@@ -16,6 +16,8 @@ const MyConference = (props) => {
 
     const { t } = useTranslation()
 
+    const handleAddSpeakr = useCallback(()=>{dispatch({type : 'addSpeaker'})},[dispatch])
+
     return <>
         <IconCard icon={Info} title={t("Conference.Info")} content={<MyConferenceInfo types={types}
             categories={categories} conference={conference} dispatch={dispatch}></MyConferenceInfo>} />
@@ -25,7 +27,7 @@ const MyConference = (props) => {
         } />
         <IconCard icon={Face} title={<CardTitle
             title={t("Conference.Speakers")}
-            actions={[<AddButton key='addButton' title={t("General.Buttons.AddSpeaker")} />]}
+            actions={[<AddButton key='addButton' title={t("General.Buttons.AddSpeaker")} onClick={handleAddSpeakr} />]}
         />
         } content={<MyConferenceSpeakers speakers={speakers}
             dispatch={dispatch} />} />
