@@ -22,7 +22,7 @@ const ConferenceSubtitle = (props) => {
             </Grid>
             <Grid item lg={11}>
                 <Typography>{t("Conferences.Speaker") + ': '}</Typography>
-                <Typography>{speaker.name}</Typography>
+                <Typography>{speaker?.name}</Typography>
             </Grid>
             <Grid item lg = {1}>
                 <RoomIcon />
