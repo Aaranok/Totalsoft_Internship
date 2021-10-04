@@ -6,7 +6,7 @@ import RegularCard from "@bit/totalsoft_oss.react-mui.regular-card";
 
 const ConferenceItem = (props) => {
 
-    const { conference, onAttend } = props
+    const { conference, onAttend, onWithdraw } = props
     const { name, speakers, location } = conference
 
     const mainSpeaker = speakers.find(speaker => speaker.isMainSpeaker)
@@ -15,7 +15,7 @@ const ConferenceItem = (props) => {
         <RegularCard cardTitle={name} cardSubtitle={<ConferenceSubtitle speaker={mainSpeaker}
             location={location} />}
             content={<ConferenceContent
-                conference={conference} onAttend = {onAttend}>
+                conference={conference} onAttend = {onAttend} onWithdraw={onWithdraw}>
             </ConferenceContent>} />
     )
 
@@ -24,7 +24,8 @@ const ConferenceItem = (props) => {
 
 ConferenceItem.propTypes = {
      conference: PropTypes.object.isRequired,
-     onAttend: PropTypes.func.isRequired
+     onAttend: PropTypes.func.isRequired,
+     onWithdraw: PropTypes.func.isRequired
 
 }
 

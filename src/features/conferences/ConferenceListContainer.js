@@ -10,11 +10,12 @@ import { useFooter } from 'providers/AreasProvider'
 import Pagination from '@bit/totalsoft_oss.react-mui.pagination'
 import { useMutation } from '@apollo/client'
 import ATTEND_CONFERENCE_MUTATION from '../conferences/gql/mutations/AttendConference'
+import WITHDRAW_CONFERENCE_MUTATION from '../conferences/gql/mutations/WithdrawConference'
 import { useError } from 'hooks/errorHandling'
 import { DialogDisplay } from '@bit/totalsoft_oss.react-mui.kit.core'
 import { useToast } from '@bit/totalsoft_oss.react-mui.kit.core'
 import { useTranslation } from 'react-i18next'
-import { emptyString } from 'utils/constants'
+import { emptyString, emptyArray } from 'utils/constants'
 import ConferenceCodeModal from './ConferenceCodeModal'
 
 
@@ -28,6 +29,7 @@ const ConferenceListContainer = () => {
     const [, setFooter] = useFooter()
     const [code, setCode] = useState()
     const [open, setOpen] = useState(false)
+    const [suggestedConferences, setSuggestedConferences] = useState(emptyArray)
     const addToast = useToast()
     const { t } = useTranslation()
 
@@ -60,11 +62,20 @@ const ConferenceListContainer = () => {
         onError: showError,
         onCompleted: result => {
             if (result?.attend) {
-                setCode(result?.attend)
+                setCode(result?.attend?.code)
+                setSuggestedConferences(result?.attend?.suggestedConferences)
                 setOpen(true)
                 addToast(t('Conference.Successfully_Attended'), 'success')
             }
         }
+    })
+
+    const [withdraw] = useMutation(WITHDRAW_CONFERENCE_MUTATION, {
+        onCompleted: () => {
+        addToast(t("General.SuccessfullyWithdrawn"), 'success')
+				refetch()
+    },
+    onError: showError
     })
 
     const handleAttend = useCallback(conferenceId => () => {
@@ -75,6 +86,13 @@ const ConferenceListContainer = () => {
         attend({ variables: { input } })
     }, [attend, email]);
 
+    const handleWithdraw = useCallback(conferenceId => () => {
+        const input = {
+            attendeeEmail: email,
+            conferenceId
+        }
+        withdraw({ variables: { input } })
+    }, [email, withdraw]);
 
     useEffect(() => {
         setFooter(<Pagination
@@ -88,9 +106,6 @@ const ConferenceListContainer = () => {
         ></Pagination>)
     }, [handleChangeRowsPerPage, pager, setFooter, refetch, handleChangePage])
 
-
-
-
     const handleFilter = useCallback((value) => { setFilters(value) }, [])
     const handleClose = useCallback(() => {
         setOpen(false)
@@ -99,11 +114,19 @@ const ConferenceListContainer = () => {
     }, [refetch])
     if (loading || !data)
         return < LoadingFakeText lines={10}></LoadingFakeText>
-
     return <>
         <ConferenceFilters filters={filters} onApplyFilters={handleFilter} />
-        <ConferenceList conferences={data?.conferenceList?.values} onAttend={handleAttend} />
-        <DialogDisplay id="showQRcode" open={open} onClose={handleClose} title={t('General.Congratulations')} content={<ConferenceCodeModal code={code} />}
+        <ConferenceList conferences={data?.conferenceList?.values} onAttend={handleAttend} onWithdraw={handleWithdraw} />
+        <DialogDisplay
+            id="showQRcode"
+            open={open}
+            onClose={handleClose}
+            title={t('General.Congratulations')}
+            content={<ConferenceCodeModal
+                code={code}
+                suggestedConferences={suggestedConferences}
+                onAttend = {handleAttend}
+                />}
         ></DialogDisplay>
 
     </>
