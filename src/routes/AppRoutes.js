@@ -6,7 +6,7 @@ import CustomRoute from '../components/routing/CustomRoute'
 
 import HelloWorld from 'features/helloWorld/HelloWorld'
 import ConferenceListContainer from 'features/conferences/ConferenceListContainer';
-import MyConferenceListContainer from 'features/myConferences/MyConferenceListContainer'
+import MyConferenceListContainer from 'features/myConferences/list/MyConferenceListContainer'
 
 import Welcome from 'features/welcome/Welcome'
 import Settings from 'features/settings/Settings'

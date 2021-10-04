@@ -18,7 +18,9 @@
       "ApplyFilters": "Aplica filtre",
       "ResetFilters": "Reseteaza filtre",
       "Save" : "Salveaza"
-    }
+    },
+    "Congratulations": "Felicitari! Te-ai inscris cu succes la conferinta! Vei fi notificat cu 5 minute inainte sa inceapa."
+
   },
   "Speaker": {
     "Name": "Nume",
@@ -60,6 +62,18 @@
     "Withdraw": "Retrage-te",
     "StatusNotSet": "Absent"
     
+  },
+  "Conference": {
+    "Info": "Conference info",
+    "Location": "Location",
+    "Speakers": "Speakers",
+    "Name" : "Name",
+    "StartDate" : "Start date",
+    "EndDate" :"End date",
+    "Type" : "Type",
+    "Category" : "Category",
+    "Successfully_Attended" : "Successfully_Attended",
+    "QRCodeMessage": "Te-ai inscris cu succes la conferinta! Vei fi notificat cu 5 minute inainte sa inceapa. Foloseste urmatorul cod pentru a accesa conferinta: {{code}}"
   },
   "NavBar": {
     "Welcome": "Bun venit",

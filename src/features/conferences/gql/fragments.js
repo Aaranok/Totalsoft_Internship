@@ -1,5 +1,4 @@
 import {gql} from "@apollo/client"
-import { Fragment } from "react"
 
 const conferenceFragments = {
     conference : gql`
@@ -9,7 +8,26 @@ const conferenceFragments = {
             startDate
             endDate
         }
-`
+    `,
+    location: gql`
+        fragment location on Location{
+            id
+            name
+            address
+            latitude
+            longitude
+        }
+    `,
+    speaker: gql`
+        fragment speaker on Speaker{
+            id 
+            name
+            isMainSpeaker
+            nationality
+            rating
+        }
+    `,
+
 }
 
 export default conferenceFragments

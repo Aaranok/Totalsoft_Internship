@@ -8,15 +8,15 @@ import attendeeStatus from "constants/attendeeStatus";
 
 const ConferenceContent = (props) => {
 
-    const {conference} = props
+    const {conference, onAttend} = props
     const { status, startDate, endDate, type, category } = conference
     
     const {t} = useTranslation()
     const noStatus = t('Conferences:StatusNotSet')
 
-    const join = status.id === attendeeStatus.Attended
-    const attend = status.id === attendeeStatus.Withdrawn
-    const withdrawn = status.id === attendeeStatus.Joined || status.id === attendeeStatus.Attended
+    const join = status?.id === attendeeStatus.Attended
+    const attend = status?.id === attendeeStatus.Withdrawn || !status
+    const withdrawn = status?.id === attendeeStatus.Joined || status?.id === attendeeStatus.Attended
     
     const startDateFixed = t('DATE_FORMAT', { date: { value: startDate, format: 'DD-MM-YYYY HH:mm' } })
     const endDateFixed = t('DATE_FORMAT', {date:{value: endDate, format : 'DD-MM-YYY HH:mm'} })
@@ -36,7 +36,7 @@ const ConferenceContent = (props) => {
                 <Grid item xs={12}>
                     {join && <Button right color="success" size={"sm"}>{t('Conferences.Join')}</Button>}
                     {withdrawn && <Button right color="danger" size={"sm"}>{t('Conferences.Withdraw')}</Button>}
-                    {attend && <Button right color="info" size={"sm"}>{t('Conferences.Attend')}</Button>}
+                    {attend && <Button right color="info" size={"sm"} onClick = {onAttend(conference?.id)}>{t('Conferences.Attend')}</Button>}
                 </Grid>
             </Grid>
         </Grid>
@@ -44,6 +44,7 @@ const ConferenceContent = (props) => {
 }
 ConferenceContent.propTypes = {
     conference: PropTypes.object.isRequired,
+    onAttend: PropTypes.func.isRequired
 }
 
 export default ConferenceContent

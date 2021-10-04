@@ -16,7 +16,7 @@ const MyConference = (props) => {
 
     const { t } = useTranslation()
 
-    const handleAddSpeakr = useCallback(()=>{dispatch({type : 'addSpeaker'})},[dispatch])
+    const handleAddSpeaker = useCallback(()=>{dispatch({type : 'addSpeaker'})},[dispatch])
 
     return <>
         <IconCard icon={Info} title={t("Conference.Info")} content={<MyConferenceInfo types={types}
@@ -27,7 +27,7 @@ const MyConference = (props) => {
         } />
         <IconCard icon={Face} title={<CardTitle
             title={t("Conference.Speakers")}
-            actions={[<AddButton key='addButton' title={t("General.Buttons.AddSpeaker")} onClick={handleAddSpeakr} />]}
+            actions={[<AddButton key='addButton' title={t("General.Buttons.AddSpeaker")} onClick={handleAddSpeaker} />]}
         />
         } content={<MyConferenceSpeakers speakers={speakers}
             dispatch={dispatch} />} />

@@ -1,7 +1,6 @@
-import React, { useCallback } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import MyConference from "./MyConference";
-import MyConferenceContainer from "./MyConferenceContainer";
+
 import { useTranslation } from "react-i18next";
 //import { prop } from "ramda";
 import { Grid } from "@material-ui/core";
@@ -16,7 +15,7 @@ const MyConferenceInfo = (props) => {
     const { types, categories, conference, dispatch } = props
 
     const { name, startDate, endDate, type, category } = conference
-    const { location } = conference
+    //const { location } = conference
 
     const handleDispatch = type => value => dispatch({ type: type, payload: value })
     //const handleNameChange = useCallback
@@ -56,7 +55,6 @@ const MyConferenceInfo = (props) => {
                         createdLabel='Conference.Type'
                         fullWidth
                         isClearable
-                        isSearchable
                         creatable
                         options={types}
                         value={type}
@@ -69,7 +67,6 @@ const MyConferenceInfo = (props) => {
                         createdLabel='Conference.Category'
                         fullWidth
                         isClearable
-                        isSearchable
                         creatable
                         options={categories}
                         value={category}
@@ -85,7 +82,7 @@ const MyConferenceInfo = (props) => {
 
 MyConferenceInfo.propTypes = {
     types: PropTypes.array,
-    categories: PropTypes.categories,
+    categories: PropTypes.array,
     conference: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired
 }

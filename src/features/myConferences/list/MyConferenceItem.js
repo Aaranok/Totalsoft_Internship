@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 //import Card from "@bit/totalsoft_oss.react-mui.card";
 import MyConferenceSubtitle from './MyConferenceSubtitle';
 import MyConferenceContent from './MyConferenceContent';
-import conferences from "utils/mocks";
 import RegularCard from "@bit/totalsoft_oss.react-mui.regular-card";
 
 const MyConferenceItem = (props) => {

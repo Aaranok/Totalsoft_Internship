@@ -19,7 +19,7 @@ const MyConferenceFilters = (props) => {
     const [endDate, setEndDate] = useState(filters.endDate)
 
     const handleApplyPressed = useCallback(() => onApplyFilters({startDate, endDate}), [onApplyFilters, endDate, startDate])
-    const handleEnterPressed = useCallback((keyCode) => (keyCode == 13), [handleApplyPressed] )
+    const handleEnterPressed = useCallback((keyCode) => (keyCode == 13), [] )
     const handleResetPressed = useCallback(() => {
         const reset_filters = makeDefaultFilter()
         setStartDate(reset_filters.startDate)
@@ -52,10 +52,10 @@ const MyConferenceFilters = (props) => {
                 </Grid>
             )}
         />
-        <Button size={"small"} color={"theme"} right={true} onClick={handleResetPressed}>
+        <Button size={"sm"} color={"theme"} right={true} onClick={handleResetPressed}>
             {t("General.Buttons.ResetFilters")}
         </Button>
-        <Button size={"small"} color={"theme"} right={true} onClick={handleApplyPressed}>
+        <Button size={"sm"} color={"theme"} right={true} onClick={handleApplyPressed}>
             {t("General.Buttons.ApplyFilters")}
         </Button>
     </>

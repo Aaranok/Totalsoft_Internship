@@ -1,5 +1,5 @@
-import React, {Fragment} from "react";
-import MyConferenceItem from 'features/myConferences/MyConferenceItem'
+import React from "react";
+import MyConferenceItem from 'features/myConferences/list/MyConferenceItem'
 import { Grid } from "@material-ui/core";
 import PropTypes from 'prop-types';
 

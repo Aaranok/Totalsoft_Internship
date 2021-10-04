@@ -12,7 +12,6 @@ const useApolloLocalStorage = key => {
   const query = getLocalStorageQuery(key)
   const { data, client } = useQueryWithErrorHandling(query)
   const value = safeRead(data, key)
-
   const handleSetData = useCallback(
     newValue => {
       const objValue = typeof newValue === 'function' ? newValue(value) : newValue
@@ -21,8 +20,8 @@ const useApolloLocalStorage = key => {
         data: { [key]: JSON.stringify(objValue || emptyObject) }
       })
     },
-    [data, client, key]
-  ) // eslint-disable-line react-hooks/exhaustive-deps
+    [data, client, key]    // eslint-disable-line react-hooks/exhaustive-deps
+  )
 
   return [value, handleSetData]
 }

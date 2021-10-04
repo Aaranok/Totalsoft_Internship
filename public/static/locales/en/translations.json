@@ -29,7 +29,8 @@
       "AddConference" : "Add Conference",
       "AddSpeaker" : "Add speaker",
       "DeleteSpeaker" : "Delete speaker"
-    }
+    },
+    "Congratulations" : "Congratulations! You successfully attended to the conference! You will be notified to join 5 minutes before it starts."
   },
   "MyConferences": {
     "Filters": {
@@ -71,6 +72,7 @@
     "Join": "Join",
     "Withdraw": "Withdraw",
     "StatusNotSet": "Not attending"
+
   },
   "Conference": {
     "Info": "Conference info",
@@ -80,7 +82,9 @@
     "StartDate" : "Start date",
     "EndDate" :"End date",
     "Type" : "Type",
-    "Category" : "Category"
+    "Category" : "Category",
+    "Successfully_Attended" : "Successfully_Attended",
+    "QRCodeMessage": "You successfully attended to the conference! You will be notified to join 5 minutes before it starts. Use the following code to access the conference: {{code}}"
 
   },
   
