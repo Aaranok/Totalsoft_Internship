@@ -19,6 +19,7 @@
       "ResetFilters": "Reseteaza filtre",
       "Save" : "Salveaza"
     },
+    "Successfully_Attended":"Ati decis cu succes sa va alaturati das Konference",
     "SuggestedConferences" : "Sugeram aceste conferinte",
     "SuccessfullyWithdrawn" : "V-ati retras cu succes",
     "Congratulations": "Felicitari! Te-ai inscris cu succes la conferinta! Vei fi notificat cu 5 minute inainte sa inceapa."
@@ -74,7 +75,7 @@
     "EndDate" :"End date",
     "Type" : "Type",
     "Category" : "Category",
-    "Successfully_Attended" : "Successfully_Attended",
+    "Successfully_Attended":"Ati decis cu succes sa va alaturati das Konference",
     "QRCodeMessage": "Te-ai inscris cu succes la conferinta! Vei fi notificat cu 5 minute inainte sa inceapa. Foloseste urmatorul cod pentru a accesa conferinta: {{code}}"
   },
   "NavBar": {

@@ -3,11 +3,6 @@ import ConferenceItem from 'features/conferences/ConferenceItem'
 import { Grid } from "@material-ui/core";
 import PropTypes from 'prop-types';
 
-
-// ConferenceList.propTypes = {
-//     conferences: PropTypes.array
-// }
-
 const ConferenceList = (props) => {
     const {conferences, onAttend, onWithdraw} = props
 
