@@ -65,7 +65,7 @@ const ConferenceListContainer = () => {
                 setCode(result?.attend?.code)
                 setSuggestedConferences(result?.attend?.suggestedConferences)
                 setOpen(true)
-                addToast(t('Conference.Successfully_Attended'), 'success')
+                addToast(t('General.Successfully_Attended'), 'success')
             }
         }
     })
