@@ -10,11 +10,7 @@ const ConferenceSubtitle = (props) => {
 
     const {speaker, location} = props
     const {t} = useTranslation();
-    
-    
-//conat ceva = dsadlasdj()
 
-//const x = ceva?.value
     return (
         <Grid container item lg={12}>
             <Grid item lg = {1}>
@@ -35,7 +31,7 @@ const ConferenceSubtitle = (props) => {
 
 }
 ConferenceSubtitle.propTypes = {
-    speaker: PropTypes.object.isRequired,
+    speaker: PropTypes.object,
     location: PropTypes.object.isRequired
 }
 

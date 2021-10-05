@@ -18,7 +18,7 @@ const MyConferenceSubtitle = (props) => {
             </Grid>
             <Grid item lg={11}>
                 <Typography>{t("Conferences.Speaker") + ': '}</Typography>
-                <Typography>{speaker.name}</Typography>
+                <Typography>{speaker?.name}</Typography>
             </Grid>
             <Grid item lg = {1}>
                 <RoomIcon />
@@ -31,7 +31,7 @@ const MyConferenceSubtitle = (props) => {
 
 }
 MyConferenceSubtitle.propTypes = {
-    speaker: PropTypes.object.isRequired,
+    speaker: PropTypes.object,
     location: PropTypes.object.isRequired
 }
 
