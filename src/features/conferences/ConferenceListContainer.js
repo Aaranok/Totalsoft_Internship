@@ -11,12 +11,15 @@ import Pagination from '@bit/totalsoft_oss.react-mui.pagination'
 import { useMutation } from '@apollo/client'
 import ATTEND_CONFERENCE_MUTATION from '../conferences/gql/mutations/AttendConference'
 import WITHDRAW_CONFERENCE_MUTATION from '../conferences/gql/mutations/WithdrawConference'
+import JOIN_CONFERENCE_MUTATION from '../conferences/gql/mutations/JoinConference'
 import { useError } from 'hooks/errorHandling'
 import { DialogDisplay } from '@bit/totalsoft_oss.react-mui.kit.core'
 import { useToast } from '@bit/totalsoft_oss.react-mui.kit.core'
 import { useTranslation } from 'react-i18next'
 import { emptyString, emptyArray } from 'utils/constants'
 import ConferenceCodeModal from './ConferenceCodeModal'
+import { useHistory } from 'react-router'
+//import ConferenceJoinModal from './ConferenceJoinModal'
 
 
 
@@ -32,6 +35,7 @@ const ConferenceListContainer = () => {
     const [suggestedConferences, setSuggestedConferences] = useState(emptyArray)
     const addToast = useToast()
     const { t } = useTranslation()
+    const history = useHistory()
 
     const handleChangeRowsPerPage = useCallback((pageSize) => {
         setPager((state) => ({ ...state, pageSize: parseInt(pageSize) }))
@@ -72,10 +76,21 @@ const ConferenceListContainer = () => {
 
     const [withdraw] = useMutation(WITHDRAW_CONFERENCE_MUTATION, {
         onCompleted: () => {
-        addToast(t("General.SuccessfullyWithdrawn"), 'success')
-				refetch()
-    },
-    onError: showError
+            addToast(t("General.SuccessfullyWithdrawn"), 'success')
+            refetch()
+        },
+        onError: showError
+    })
+
+    const [join] = useMutation(JOIN_CONFERENCE_MUTATION, {
+        onCompleted: () => {
+            addToast(t("Conferences.SuccessfullyJoined"), 'success')
+            //setOpen(true)
+            refetch()
+            
+        },
+        onError: showError
+
     })
 
     const handleAttend = useCallback(conferenceId => () => {
@@ -93,6 +108,15 @@ const ConferenceListContainer = () => {
         }
         withdraw({ variables: { input } })
     }, [email, withdraw]);
+
+    const handleJoin = useCallback(conferenceId => () => {
+        const input = {
+            attendeeEmail: email,
+            conferenceId
+        }
+        join({ variables: { input } })
+        history.push(`/Conferences/view/${conferenceId}`)
+    }, [email, history, join])
 
     useEffect(() => {
         setFooter(<Pagination
@@ -116,7 +140,17 @@ const ConferenceListContainer = () => {
         return < LoadingFakeText lines={10}></LoadingFakeText>
     return <>
         <ConferenceFilters filters={filters} onApplyFilters={handleFilter} />
-        <ConferenceList conferences={data?.conferenceList?.values} onAttend={handleAttend} onWithdraw={handleWithdraw} />
+        <ConferenceList conferences={data?.conferenceList?.values}
+            onAttend={handleAttend}
+            onWithdraw={handleWithdraw}
+            onJoin={handleJoin} />
+        {/* <DialogDisplay
+            id="showConference"
+            open = {open}
+            onClose = {handleClose}
+            title = {t('General.HappyJoin')}
+            content = {<ConferenceJoinModal title={"titlu_test"} />}
+        ></DialogDisplay> */}
         <DialogDisplay
             id="showQRcode"
             open={open}
@@ -125,8 +159,8 @@ const ConferenceListContainer = () => {
             content={<ConferenceCodeModal
                 code={code}
                 suggestedConferences={suggestedConferences}
-                onAttend = {handleAttend}
-                />}
+                onAttend={handleAttend}
+            />}
         ></DialogDisplay>
 
     </>

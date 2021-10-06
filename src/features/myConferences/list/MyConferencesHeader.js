@@ -8,7 +8,6 @@ const MyConferencesHeader = (props) => {
 
     const {title, actions} = props
     
-    //?const useStyles = makeStyles((theme) => ({ title: { ...theme.header.title, width: '100%' } }))
     return (
         <Grid container justifyContent="flex-start" alignItems="center" >
             <Grid item xs={6} sm={9} lg={9} container justifyContent="flex-start">

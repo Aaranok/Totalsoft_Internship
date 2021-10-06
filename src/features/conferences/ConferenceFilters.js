@@ -1,9 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import SearchIcon from '@material-ui/icons/Search';
 import { Grid } from '@material-ui/core';
-//import DateTime from 'components/common/inputs/DateTime';
-//import Button from 'components/common/buttons/Button';
-//import IconCard from 'components/common/cards/IconCard';
 import IconCard from "@bit/totalsoft_oss.react-mui.icon-card";
 import Button from '@bit/totalsoft_oss.react-mui.button';
 import DateTime from '@bit/totalsoft_oss.react-mui.date-time';

@@ -63,7 +63,9 @@
     "Attend": "Participa",
     "Join": "Alatura-te",
     "Withdraw": "Retrage-te",
-    "StatusNotSet": "Absent"
+    "StatusNotSet": "Absent",
+    "SuccessfullyJoined" : "V-ati alaturat cu succes conferintei"
+
     
   },
   "Conference": {

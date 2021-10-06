@@ -7,13 +7,12 @@ import CustomRoute from '../components/routing/CustomRoute'
 import HelloWorld from 'features/helloWorld/HelloWorld'
 import ConferenceListContainer from 'features/conferences/ConferenceListContainer';
 import MyConferenceListContainer from 'features/myConferences/list/MyConferenceListContainer'
-
+import JoinedConference from '../features/conferences/JoinedConference'
 import Welcome from 'features/welcome/Welcome'
 import Settings from 'features/settings/Settings'
 import { Forbidden, NotFound } from '@bit/totalsoft_oss.react-mui.kit.core'
 import { useEmail } from 'hooks/useEmail'
 import MyConferenceContainer from 'features/myConferences/edit/MyConferenceContainer';
-
 
 export default function AppRoutes() {
   const [email] = useEmail()
@@ -27,6 +26,7 @@ export default function AppRoutes() {
         <CustomRoute isPrivate={false} exact path='/helloWorld' component={HelloWorld} />
         <CustomRoute isPrivate={false} exact path = "/myConferences/:id(new)" component={MyConferenceContainer} />  
         <CustomRoute isPrivate={false} exact path="/myConferences/:id(\d+)" component={MyConferenceContainer} />
+        <CustomRoute isPrivate={false} exact path="/Conferences/view/:id(\d+)" component={JoinedConference} /> 
         <Redirect exact from='/' to='/welcome' />
         <CustomRoute isPrivate={false} exact path='/forbidden' component={Forbidden} />
         <CustomRoute isPrivate={false} render={() => <NotFound title='PageNotFound'></NotFound>} />

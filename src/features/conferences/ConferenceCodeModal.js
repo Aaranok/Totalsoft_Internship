@@ -9,7 +9,6 @@ import { isEmpty } from 'ramda';
 
 const ConferenceCodeModal = ({code, suggestedConferences, onAttend}) => {
     const {t} = useTranslation()
-    //debugger
     return(<>
         <Grid container>
             <Grid item>

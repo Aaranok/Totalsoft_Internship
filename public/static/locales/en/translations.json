@@ -74,7 +74,8 @@
     "Attend": "Attend",
     "Join": "Join",
     "Withdraw": "Withdraw",
-    "StatusNotSet": "Not attending"
+    "StatusNotSet": "Not attending",
+    "SuccessfullyJoined" : "You have successfully joined the conference"
 
   },
   "Conference": {

@@ -4,12 +4,13 @@ import { Grid } from "@material-ui/core";
 import PropTypes from 'prop-types';
 
 const ConferenceList = (props) => {
-    const {conferences, onAttend, onWithdraw} = props
+    const {conferences, onAttend, onWithdraw, onJoin} = props
 
     ConferenceList.propTypes = {
         conferences: PropTypes.array,
         onAttend: PropTypes.func.isRequired,
-        onWithdraw: PropTypes.func.isRequired
+        onWithdraw: PropTypes.func.isRequired,
+        onJoin: PropTypes.func.isRequired
     }
     
     return (
@@ -20,6 +21,7 @@ const ConferenceList = (props) => {
                         conference={conference}
                         onAttend = {onAttend}
                         onWithdraw = {onWithdraw}
+                        onJoin = {onJoin}
                     />
                 </Grid>
             )}
